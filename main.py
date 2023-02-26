@@ -11,3 +11,6 @@ with st.form("form1", clear_on_submit=True):
 	email = st.text_input("Enter email") 
 	message = st.text_area("Message") 
 	button= st.form_submit_button("Submit")
+	
+st.write(name)
+st.write(email)
