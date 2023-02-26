@@ -16,7 +16,7 @@ with st.form("StudRegAndCourseForm", clear_on_submit=True):
     code_presentation = st.selectbox('Select semester', semester)
     year = st.selectbox('Select year', year_list)
     withdrawnstatus = st.radio('Select a withdrawn status', ['0', '1'])
-    button = st.form_submit_button("<br>Submit")
+    button = st.form_submit_button("Submit")
     
 st.write(studentID)
 st.write(withdrawnstatus)
