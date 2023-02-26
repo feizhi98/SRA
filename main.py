@@ -16,6 +16,8 @@ with st.form("StudRegAndCourseForm", clear_on_submit=True):
     button = st.form_submit_button("Submit")
     
 st.write(studentID)
-st.write(withdrawnstatus)
-st.write(year)
+if withdrawnstatus:
+    st.write(withdrawnstatus)
+if year:
+    st.write(year)
 st.write(code_presentation)
