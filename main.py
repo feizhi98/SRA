@@ -4,7 +4,7 @@ import datetime
 st.title("Student Registration Form")
 st.subheader("Enter details below")
 
-year = ['2013','2014']
+year_list = ['2013','2014']
 semester = ['2013B', '2013J', '2014B', '2014J']
 
 
