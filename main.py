@@ -1,16 +1,18 @@
 
-from google.protobuf import message
 import streamlit as st
+import datetime
 
-st.title("Streamlit Form Demo") 
+st.title("Student Registation Form") 
 st.subheader("Enter details below")
 
+#Generate list of year
+this_year = datetime.datetime.now().year
+year_list = list(range(this_year-10, this_year+1))
 
-with st.form("form1", clear_on_submit=True): 
-	name = st.text_input("Enter full name") 
-	email = st.text_input("Enter email") 
-	message = st.text_area("Message") 
+with st.form("StudRegAndCourseForm", clear_on_submit=True): 
+	studentID = st.text_input("Enter student ID") 
+	code_presentation= st.text_input("Enter code_presentation(semester)") 
+        selected_year = st.selectbox('Select year', year_list)
+        withdrawnstatus = st.radio('Select an withdrawn status', ['0', '1'])
 	button= st.form_submit_button("Submit")
-	
-st.write(name)
-st.write(email)
+
