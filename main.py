@@ -4,10 +4,7 @@ import datetime
 st.title("Student Registration Form")
 st.subheader("Enter details below")
 
-# Generate list of years
-this_year = datetime.datetime.now().year
-year_list = list(range(this_year - 10, this_year + 1))
-
+year = ['2013','2014']
 semester = ['2013B', '2013J', '2014B', '2014J']
 
 
