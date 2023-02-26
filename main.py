@@ -8,9 +8,12 @@ st.subheader("Enter details below")
 this_year = datetime.datetime.now().year
 year_list = list(range(this_year - 10, this_year + 1))
 
+semester = ['2013B', '2013J', '2014B', '2014J']
+
+
 with st.form("StudRegAndCourseForm", clear_on_submit=True):
     studentID = st.text_input("Enter student ID")
-    code_presentation = st.text_input("Enter code_presentation (semester)")
+    code_presentation = st.selectbox('Select semester', semester)
     selected_year = st.selectbox('Select year', year_list)
     withdrawnstatus = st.radio('Select a withdrawn status', ['0', '1'])
     button = st.form_submit_button("Submit")
