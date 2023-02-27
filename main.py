@@ -143,6 +143,9 @@ menu_items = {
     "Student Info Form": student_info
 }
 
+image_url = "https://www.google.com/url?sa=i&url=https%3A%2F%2Fvarteq.com%2Fhow-learning-analytics-transform-education-outcomes%2F&psig=AOvVaw1NnfZUNbNCbjlSAvjySOO3&ust=1677564310584000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCMDk-JuEtf0CFQAAAAAdAAAAABAD"
+st.image(image_url, width=200)
+
 # Create the sidebar menu
 menu_choice = st.sidebar.selectbox("Select a page", list(menu_items.keys()))
 
