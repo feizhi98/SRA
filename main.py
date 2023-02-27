@@ -1,5 +1,7 @@
 import streamlit as st
 from PIL import Image
+import requests
+from io import BytesIO
 
 # Setting the page title and favicon
 st.set_page_config(page_title='Student Registration Form', page_icon="📚")
@@ -16,7 +18,9 @@ background-size: cover;
 st.markdown(page_bg, unsafe_allow_html=True)
 
 # Adding a header image
-header = Image.open("https://cdn.pixabay.com/photo/2017/01/13/01/22/analytic-1979137_960_720.png")
+url = "https://cdn.pixabay.com/photo/2017/01/13/01/22/analytic-1979137_960_720.png"
+response = requests.get(url)
+header = Image.open(BytesIO(response.content))
 st.image(header, use_column_width=True)
 
 # Adding a header and subheader
