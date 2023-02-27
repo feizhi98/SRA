@@ -24,7 +24,8 @@ def registration_form():
                 st.write(withdrawnstatus)
             if year:
                 st.write(year)
-            st.write(code_presentation)
+		    if code_presentation:
+				st.write(code_presentation)
 
 # Define the function to display the Assessment form
 def assessment():
@@ -46,11 +47,17 @@ def assessment():
 
         if button:
             st.write(studentID)
-            if withdrawnstatus:
-                st.write(withdrawnstatus)
+			if code_presentation:
+				st.write(code_presentation)
+            if course:
+                st.write(course)
             if year:
                 st.write(year)
-            st.write(code_presentation)
+			if late_submit:
+			    st.write(late_submit)
+			if result:
+			    st.write(result)
+		
 
 # Define the function to display the Vle page
 def vle():
