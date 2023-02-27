@@ -136,7 +136,7 @@ def student_info():
 
 # Create the menu items and their respective pages
 menu_items = {
-    "Home": lambda: st.write("Welcome to LMS system!"),
+    "Home": lambda: st.write("Welcome to LMS system!"\br+"Please select menu bar to proceed!"),
     "Registration Form": registration_form,
     "Assessment Form": assessment,
     "VLE Form": vle,
@@ -151,4 +151,4 @@ menu_choice = st.sidebar.selectbox("Select a page", list(menu_items.keys()))
 menu_items[menu_choice]()
 
 image_url = "https://varteq.com/wp-content/uploads/2020/08/learning_analytics-680x360.png"
-st.image(image_url, width=700)
+st.image(image_url, width=800)
