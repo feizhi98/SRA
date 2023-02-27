@@ -3,6 +3,21 @@ import streamlit as st
 # Set page configurations
 st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_board:")
 
+# Define the main menu function
+def main_menu():
+    st.title("Main Menu")
+    option = st.sidebar.selectbox("Please select an option", ["Registration Form", "Assessment Form", "VLE Form", "Student Info Form"])
+
+    # Display the appropriate form based on user selection
+    if option == "Registration Form":
+        registration_form()
+    elif option == "Assessment Form":
+        assessment()
+    elif option == "VLE Form":
+        vle()
+    elif option == "Student Info Form":
+        student_info()
+
 # Define the function to display the registration form
 def registration_form():
     st.title("Student Registration Form")
@@ -132,20 +147,8 @@ def student_info():
                 st.write(final_result)
             if studied_credits:
 
-# Create the menu items and their respective pages
-def main_menu():
-	menu_items = {
-		"Home": lambda: st.write("Welcome to the Student Registration Form!"),
-		"Registration Form": registration_form,
-		"Assessment Form": assessment,
-		"VLE Form": vle,
-		"Student Info Form": student_info
-}
-
-	# Create the sidebar menu
-	menu_choice = st.sidebar.selectbox("Select a page", list(menu_items.keys()))
-
-	# Display the selected page
-	menu_items[menu_choice]()
+# Call the main_menu function to start the app
+if __name__ == "__main__":
+    main_menu()
 
 
