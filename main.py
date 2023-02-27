@@ -3,6 +3,7 @@ import datetime
 
 st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_board:")
 
+st.title("Student Registration Form")
 st.subheader("Enter details below")
 
 year_list = ['2013','2014']
