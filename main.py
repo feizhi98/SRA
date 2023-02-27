@@ -147,8 +147,8 @@ def student_info():
                 st.write(final_result)
             if studied_credits:
 
-# Call the main_menu function to start the app
-if __name__ == "__main__":
-    main_menu()
+    # Call the main_menu function to start the app
+    if __name__ == "__main__":
+        main_menu()
 
 
