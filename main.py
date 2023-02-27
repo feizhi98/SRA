@@ -92,6 +92,10 @@ def student_info():
         gender = st.radio('Select gender', ['M', 'F'])
         age_band = st.selectbox('Select age band', ageband)
         highest_education = st.selectbox('Select highest education level', education)
+        region = st.selectbox('Select region', region_)
+        disability = st.radio('Select disability status', ['Y', 'N'])
+        num_of_prev_attempts = st.selectbox('Select number of previous attempts', numofattempts)
+        code_presentation = st.selectbox('Select semester', semester)
         submitbutton = st.form_submit_button("Submit")
         
         if submitbutton:
