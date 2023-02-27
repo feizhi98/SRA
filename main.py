@@ -1,99 +1,47 @@
 import streamlit as st
-import requests
 from PIL import Image
-from io import BytesIO
 
-# Set page title and favicon
-st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_board:")
+# Setting the page title and favicon
+st.set_page_config(page_title='Student Registration Form', page_icon="📚")
 
-# Set page background
+# Setting the page background
 page_bg = """
 <style>
 body {
-background-image: url("https://images.unsplash.com/photo-1556767571-5ec41e3239bb");
+background-image: url("https://cdn.pixabay.com/photo/2016/06/29/08/45/books-1481985_960_720.jpg");
 background-size: cover;
 }
 </style>
 """
 st.markdown(page_bg, unsafe_allow_html=True)
 
-# Set page style
-page_style = """
-<style>
-h1, h2, h3 {
-    font-weight: bold;
-    text-align: center;
-    color: #ffffff;
-    margin-bottom: 1rem;
-}
+# Adding a header image
+header = Image.open("https://cdn.pixabay.com/photo/2017/01/13/01/22/analytic-1979137_960_720.png")
+st.image(header, use_column_width=True)
 
-label {
-    color: #ffffff;
-    font-weight: bold;
-}
+# Adding a header and subheader
+st.write("""
+# Student Registration Form
+""")
+st.write("""
+## Enter details below
+""")
 
-select, input[type="text"] {
-    width: 100%;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-select:focus, input[type="text"]:focus {
-    outline: none;
-}
-
-button {
-    background-color: #0069D9;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #0052A3;
-}
-</style>
-"""
-st.markdown(page_style, unsafe_allow_html=True)
-
-# Page content
-response = requests.get("https://images.unsplash.com/photo-1518977676601-b53f82aba655")
-image = Image.open(BytesIO(response.content))
-st.image(image, use_column_width=True)
-
-st.title("Student Registration Form")
-st.subheader("Enter details below")
-
-year_list = ['2013', '2014']
-semester_list = ['2013B', '2013J', '2014B', '2014J']
+# Creating form fields
+year_list = ['2013','2014']
+semester = ['2013B', '2013J', '2014B', '2014J']
 
 with st.form("StudRegAndCourseForm", clear_on_submit=True):
-    col1, col2 = st.beta_columns(2)
-    with col1:
-        studentID = st.text_input("Student ID")
-    with col2:
-        withdrawnstatus = st.radio('Withdrawn status', ['Enrolled', 'Withdrawn'])
+    studentID = st.text_input("Enter student ID")
+    code_presentation = st.selectbox('Select semester', semester)
+    year = st.selectbox('Select year', year_list)
+    withdrawnstatus = st.radio('Select a withdrawn status', ['0', '1'])
+    button = st.form_submit_button("Submit")
 
-    col3, col4 = st.beta_columns(2)
-    with col3:
-        code_presentation = st.selectbox('Semester', semester_list)
-    with col4:
-        year = st.selectbox('Year', year_list)
-
-    submitted = st.form_submit_button("Submit")
-
-    if submitted:
-        st.write("Submitted data:")
+    # Displaying form submission data
+    if button:
+        st.write("### Form Submission Data")
         st.write(f"Student ID: {studentID}")
-        st.write(f"Withdrawn status: {withdrawnstatus}")
-        st.write(f"Semester: {code_presentation}")
+        st.write(f"Withdrawn Status: {withdrawnstatus}")
         st.write(f"Year: {year}")
+        st.write(f"Semester: {code_presentation}")
