@@ -62,7 +62,6 @@ def assessment():
     code_module = ['AAA','BBB','CCC','DDD','EEE','FFF','GGG']
 
     with st.form("StudRegAndCourseForm", clear_on_submit=True):
-        assessmentID = st.number_input("Enter assessment ID",min_value=1)
         studentID = st.number_input("Enter student ID",min_value=1)
         code_presentation = st.selectbox('Select semester', semester)
         course = st.selectbox('Select code module', code_module)
@@ -86,7 +85,6 @@ def assessment():
                 
     # Generate output
     output = {
-        "id_assessment" : int(assessmentID),
         "code_presentation" : code_presentation,
         "id_student" : int(studentID),
         "Result" : result,
