@@ -1,5 +1,7 @@
 import streamlit as st
+import requests
 from PIL import Image
+from io import BytesIO
 
 # Set page title and favicon
 st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_board:")
@@ -64,7 +66,8 @@ button:hover {
 st.markdown(page_style, unsafe_allow_html=True)
 
 # Page content
-image = Image.open("https://images.unsplash.com/photo-1518977676601-b53f82aba655")
+response = requests.get("https://images.unsplash.com/photo-1518977676601-b53f82aba655")
+image = Image.open(BytesIO(response.content))
 st.image(image, use_column_width=True)
 
 st.title("Student Registration Form")
