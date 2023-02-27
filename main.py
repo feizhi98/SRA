@@ -136,7 +136,7 @@ def student_info():
 
 # Create the menu items and their respective pages
 menu_items = {
-    "Home": lambda: st.write("Welcome to LMS system!\n"Please select menu bar to proceed!"),
+    "Home": lambda: st.write("Welcome to LMS system!\nPlease select menu bar to proceed!"),
     "Registration Form": registration_form,
     "Assessment Form": assessment,
     "VLE Form": vle,
