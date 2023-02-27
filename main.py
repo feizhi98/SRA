@@ -95,13 +95,13 @@ def student_info():
         region = st.selectbox('Select region', region_)
         disability = st.radio('Select disability status', ['Y', 'N'])
         num_of_prev_attempts = st.selectbox('Select number of previous attempts', numofattempts)
+        studied_credits = st.text_input("Enter studied credits")
         code_presentation = st.selectbox('Select semester', semester)
         course = st.selectbox('Select code module', code_module)
         sum_click = st.text_input("Enter sum of clicks")
-        After_Clicks = st.text_input("Enter sum of clicks")
-        Before_Clicks = st.text_input("Enter sum of clicks")
+        After_Clicks = st.text_input("Enter sum of after clicks")
+        Before_Clicks = st.text_input("Enter sum of before clicks")
         final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
-        studied_credits = st.text_input("Enter studied credits")
         submitbutton = st.form_submit_button("Submit")
         
         if submitbutton:
@@ -110,11 +110,6 @@ def student_info():
             st.write(After_Clicks)
             st.write(Before_Clicks)
 
-
-
-
-
-   
 # Create the menu items and their respective pages
 menu_items = {
     "Home": lambda: st.write("Welcome to the Student Registration Form!"),
