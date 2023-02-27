@@ -75,8 +75,6 @@ def vle():
                 st.write(activity_type)
             st.write(sum_click)
             
-
-        
 def student_info():
     st.title("Student Info Form")
     st.subheader("Enter details below")
@@ -105,7 +103,6 @@ def student_info():
         final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
         studied_credits = st.text_input("Enter studied credits")
         button = st.form_submit_button("Submit")
-
 
         if button:
             st.write(studentID)
