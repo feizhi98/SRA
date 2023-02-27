@@ -68,11 +68,13 @@ def vle():
     with st.form("StudRegAndCourseForm", clear_on_submit=True):
         activity_type = st.selectbox('Select semester', activity)
         sum_click = st.text_input("Enter sum of clicks")
+        button = st.form_submit_button("Submit")
 
         if button:
             if activity_type:
                 st.write(activity_type)
             st.write(sum_click)
+            
 
         
 # Define the function to display the studentInfo page
