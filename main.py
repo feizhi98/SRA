@@ -5,7 +5,7 @@ st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_bo
 
 # Create the menu items and their respective pages
 menu_items = {
-    "Home": st.write("Welcome to the Student Registration Form!"),
+    "Home": lambda: st.write("Welcome to the Student Registration Form!"),
     "Registration Form": lambda: registration_form()
 }
 
