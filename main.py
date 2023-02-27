@@ -3,21 +3,6 @@ import streamlit as st
 # Set page configurations
 st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_board:")
 
-# Define the main menu function
-def main_menu():
-    st.title("Main Menu")
-    option = st.sidebar.selectbox("Please select an option", ["Registration Form", "Assessment Form", "VLE Form", "Student Info Form"])
-
-    # Display the appropriate form based on user selection
-    if option == "Registration Form":
-        registration_form()
-    elif option == "Assessment Form":
-        assessment()
-    elif option == "VLE Form":
-        vle()
-    elif option == "Student Info Form":
-        student_info()
-
 # Define the function to display the registration form
 def registration_form():
     st.title("Student Registration Form")
@@ -90,65 +75,76 @@ def vle():
                 st.write(activity_type)
             st.write(sum_click)
             
+
+        
+# Define the function to display the studentInfo page
 def student_info():
     st.title("Student Info Form")
     st.subheader("Enter details below")
-  
+
     year_list = ['2013','2014']
     semester = ['2013B', '2013J', '2014B', '2014J']
-    ageband = ['0-35','35-55','55<=']
-    numofattempts = ['1','2','3','4','5','6']
-    education = ['HE Qualification','Lower Than A Level','A Level or Equivalent','Post Graduate Qualification','No Formal quals']
+	ageband = ['0-35','35-55','55<=']
+	numofattempts =['1','2','3','4','5','6']
+	education = ['HE Qualification','Lower Than A Level','A Level or Equivalent','Post Graduate Qualification','No Formal quals']
     code_module = ['AAA','BBB','CCC','DDD','EEE','FFF','GGG']
-    region_ = ['East Aglian Region','East Midlands Region','Ireland','London Region','North Region','North Western Region','Scotland','South East Region','South Region','South West Region','Wales','West Midlands Region','Yorkshire Region']
+	region_ = ['East Aglian Region','East Midlands Region','Ireland','London Region','North Region','North Western Region','Scotland','South East Region','South Region','South West Region','Wales','West Midlands Region','Yorkshire Region']
 
     with st.form("StudentInfoForm", clear_on_submit=True):
-        studentID = st.text_input("Enter student ID")
-        gender = st.radio('Select gender', ['M', 'F'])
-        age_band = st.selectbox('Select age band', ageband)
-        highest_education = st.selectbox('Select highest education level', education)
-        region = st.selectbox('Select region', region_)
-        disability = st.radio('Select disability status', ['Y', 'N'])
-        num_of_prev_attempts = st.selectbox('Select number of previous attempts', numofattempts)
+	    studentID = st.text_input("Enter student ID")
+	    gender = st.radio('Select gender, ['M', 'F'])
+		age_band = st.selectbox('Select age band', ageband)
+		highest_education = st.selectbox('Select highest education level', education)
+		region = st.selectbox('Select region', region_)
+		disability = st.radio('Select disability status, ['Y', 'N'])
+		num_of_prev_attempts = st.selectbox('Select number of previous attempts', numofattempts)
+		code_presentation = st.selectbox('Select semester', semester)
+		course = st.selectbox('Select code module', code_module)	
+		sum_click = st.text_input("Enter sum of clicks")
+		After_Clicks = st.text_input("Enter sum of clicks")
+        Before_Clicks = st.text_input("Enter sum of clicks")
+        final_result = st.radio('Select result', ['Distinction','Pass', 'Fail','Withdrawn'])
         studied_credits = st.text_input("Enter studied credits")
-        code_presentation = st.selectbox('Select semester', semester)
-        course = st.selectbox('Select code module', code_module)
-        sum_click = st.text_input("Enter sum of clicks")
-        After_Clicks = st.text_input("Enter sum of after clicks")
-        Before_Clicks = st.text_input("Enter sum of before clicks")
-        final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
-        submitbutton = st.form_submit_button("Submit")
-        
-        if submitbutton:
+     
+        button = st.form_submit_button("Submit")
+
+        if button:
             st.write(studentID)
             if gender:
                 st.write(gender)
             if age_band:
                 st.write(age_band)
-            if highest_education:
+			if highest_education:
                 st.write(highest_education)
             if region:
                 st.write(region)
             if disability:
                 st.write(disability)
-            if num_of_prev_attempts:
+			if num_of_prev_attempts:
                 st.write(num_of_prev_attempts)
-            if code_presentation:
+			if code_presentation:
                 st.write(code_presentation)
-            if course:
+			if course:
                 st.write(course)
-            if sum_click:
-                st.write(sum_click)
-            if After_Clicks:
-                st.write(After_Clicks)
-            if Before_Clicks:
-                st.write(Before_Clicks)
+			st.write(sum_click)
+			st.write(After_Clicks)
+			st.write(Before_Clicks)
             if final_result:
                 st.write(final_result)
-            if studied_credits:
+			st.write(studied_credits)
 
-# Call the main_menu function to start the app
-if __name__ == "__main__":
-        main_menu()
+# Create the menu items and their respective pages
+menu_items = {
+    "Home": lambda: st.write("Welcome to LMS system!"),
+    "Registration Form": registration_form,
+    "Assessment Form": assessment,
+    "VLE Form": vle,
+    "Student Info Form": student_info
+}
 
+# Create the sidebar menu
+menu_choice = st.sidebar.selectbox("Select a page", list(menu_items.keys()))
+
+# Display the selected page
+menu_items[menu_choice]()
 
