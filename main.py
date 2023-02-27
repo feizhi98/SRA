@@ -1,7 +1,8 @@
 import streamlit as st
 import datetime
 
-st.title("Student Registration Form")
+st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_board:")
+
 st.subheader("Enter details below")
 
 year_list = ['2013','2014']
