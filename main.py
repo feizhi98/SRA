@@ -21,7 +21,7 @@ def registration_form():
     semester = ['2013B', '2013J', '2014B', '2014J']
 
     with st.form("StudRegAndCourseForm", clear_on_submit=True):
-        studentID = st.number_input("Enter student ID")
+        studentID = st.number_input("Enter student ID",min_value=1)
         code_presentation = st.selectbox('Select semester', semester)
         year = st.selectbox('Select year', year_list)
         withdrawnstatus = st.radio('Select a withdrawn status', ['0', '1'])
