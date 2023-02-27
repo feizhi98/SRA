@@ -1,37 +1,34 @@
 import streamlit as st
+import datetime
 
-# Set page layout and background color
-st.set_page_config(page_title="Student Registration Form", page_icon=":pencil2:", layout="wide", initial_sidebar_state="expanded")
-page_bg = '''
-<style>
-body {
-background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
-background-size: cover;
-}
-</style>
-'''
-st.markdown(page_bg, unsafe_allow_html=True)
+# Set page layout
+st.set_page_config(
+    page_title="Student Registration Form",
+    page_icon=":mortar_board:",
+    layout="wide"
+)
 
-# Create form
-with st.form("StudRegAndCourseForm", clear_on_submit=True):
-    # Set form columns
-    col1, col2 = st.beta_columns(2)
+# Define page header
+st.title("Student Registration Form")
+st.subheader("Enter details below")
 
-    with col1:
-        st.subheader("Student Details")
+# Define form layout
+row1_spacer1, row1_col1, row1_spacer2 = st.beta_columns((.1, 1, .1))
+with row1_col1:
+    with st.form("StudRegAndCourseForm", clear_on_submit=True):
+        # Define form inputs
         studentID = st.text_input("Enter student ID")
+        code_presentation = st.selectbox('Select semester', semester)
+        year = st.selectbox('Select year', year_list)
         withdrawnstatus = st.radio('Select a withdrawn status', ['0', '1'])
         button = st.form_submit_button("Submit")
-
-    with col2:
-        st.subheader("Semester Details")
-        year_list = ['2013','2014']
-        year = st.selectbox('Select year', year_list)
-        semester = ['2013B', '2013J', '2014B', '2014J']
-        code_presentation = st.selectbox('Select semester', semester)
-
-    if button:
-        st.write(f"Student ID: {studentID}")
-        st.write(f"Withdrawn Status: {withdrawnstatus}")
-        st.write(f"Year: {year}")
-        st.write(f"Semester: {code_presentation}")
+        
+# Define form output
+if button:
+    row2_spacer1, row2_col1, row2_spacer2 = st.beta_columns((.1, 1, .1))
+    with row2_col1:
+        st.write("**Student Registration Form Output:**")
+        st.write("- Student ID: ", studentID)
+        st.write("- Withdrawn Status: ", withdrawnstatus)
+        st.write("- Year: ", year)
+        st.write("- Semester: ", code_presentation)
