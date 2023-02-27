@@ -105,10 +105,32 @@ def student_info():
         submitbutton = st.form_submit_button("Submit")
         
         if submitbutton:
-            st.write("Student ID:", studentID)
-            st.write(sum_click)
-            st.write(After_Clicks)
-            st.write(Before_Clicks)
+            st.write(studentID)
+            if gender:
+                st.write(gender)
+            if age_band:
+                st.write(age_band)
+            if highest_education:
+                st.write(highest_education)
+            if region:
+                st.write(region)
+            if disability:
+                st.write(disability)
+            if num_of_prev_attempts:
+                st.write(num_of_prev_attempts)
+            if code_presentation:
+                st.write(code_presentation)
+            if course:
+                st.write(course)
+            if sum_click:
+                st.write(sum_click)
+            if After_Clicks:
+                st.write(After_Clicks)
+            if Before_Clicks:
+                st.write(Before_Clicks)
+            if final_result:
+                st.write(final_result)
+            if studied_credits:
 
 # Create the menu items and their respective pages
 menu_items = {
