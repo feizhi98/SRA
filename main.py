@@ -106,7 +106,7 @@ def student_info():
         final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
         studied_credits = st.text_input("Enter studied credits")
 
-        button = st.form_submit_button("Submit")
+        button= st.form_submit_button("Submit")
 
         if button:
             st.write(studentID)
