@@ -60,8 +60,21 @@ def assessment():
 
 # Define the function to display the Vle page
 def vle():
-    st.title("Vle Page")
-    st.write("This is the Vle page")
+    st.title("Virtual Learning Environment(VLE) Form")
+    st.subheader("Enter details below")
+
+	activity = ['dataplus', 'forumng', 'homepage', 'oucontent','resource','subpage','url','quiz','glossary','ouelluminate','oucollaborate','sharedsubpage']
+
+    with st.form("StudRegAndCourseForm", clear_on_submit=True):
+	    activity_type = st.selectbox('Select semester', activity)
+        sum_click = st.text_input("Enter sum of clicks")
+       
+
+        if button:
+		    if activity_type:
+                st.write(activity_type)
+            st.write(sum_click)
+        
 
 # Define the function to display the studentInfo page
 def student_info():
