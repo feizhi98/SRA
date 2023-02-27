@@ -143,8 +143,6 @@ menu_items = {
     "Student Info Form": student_info
 }
 
-image_url = "https://varteq.com/wp-content/uploads/2020/08/learning_analytics-680x360.png"
-st.image(image_url, width=200)
 
 # Create the sidebar menu
 menu_choice = st.sidebar.selectbox("Select a page", list(menu_items.keys()))
@@ -152,3 +150,5 @@ menu_choice = st.sidebar.selectbox("Select a page", list(menu_items.keys()))
 # Display the selected page
 menu_items[menu_choice]()
 
+image_url = "https://varteq.com/wp-content/uploads/2020/08/learning_analytics-680x360.png"
+st.image(image_url, width=700)
