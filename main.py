@@ -75,8 +75,6 @@ def vle():
                 st.write(activity_type)
             st.write(sum_click)
             
-
-        
 # Define the function to display the studentInfo page
 def student_info():
     st.title("Student Info Form")
@@ -100,7 +98,7 @@ def student_info():
         num_of_prev_attempts = st.selectbox('Select number of previous attempts', numofattempts)
         code_presentation = st.selectbox('Select semester', semester)
         course = st.selectbox('Select code module', code_module)
-	studied_credits = st.text_input("Enter studied credits")
+        studied_credits = st.text_input("Enter studied credits")
         sum_click = st.text_input("Enter sum of clicks")
         After_Clicks = st.text_input("Enter sum of clicks")
         Before_Clicks = st.text_input("Enter sum of clicks")
@@ -133,7 +131,6 @@ def student_info():
             if final_result:
                 st.write(final_result)
             st.write(studied_credits)
-
 
 
 # Create the menu items and their respective pages
