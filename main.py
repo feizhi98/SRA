@@ -63,19 +63,18 @@ def vle():
     st.title("Virtual Learning Environment(VLE) Form")
     st.subheader("Enter details below")
 
-	activity = ['dataplus', 'forumng', 'homepage', 'oucontent','resource','subpage','url','quiz','glossary','ouelluminate','oucollaborate','sharedsubpage']
+    activity = ['dataplus', 'forumng', 'homepage', 'oucontent','resource','subpage','url','quiz','glossary','ouelluminate','oucollaborate','sharedsubpage']
 
     with st.form("StudRegAndCourseForm", clear_on_submit=True):
-	    activity_type = st.selectbox('Select semester', activity)
+        activity_type = st.selectbox('Select semester', activity)
         sum_click = st.text_input("Enter sum of clicks")
-       
 
         if button:
-		    if activity_type:
+            if activity_type:
                 st.write(activity_type)
             st.write(sum_click)
-        
 
+        
 # Define the function to display the studentInfo page
 def student_info():
     st.title("Student Info Page")
