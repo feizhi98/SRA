@@ -133,7 +133,7 @@ def student_info():
             if studied_credits:
 
 # Create the menu items and their respective pages
-def menu_items():
+def main_menu():
 	menu_items = {
 		"Home": lambda: st.write("Welcome to the Student Registration Form!"),
 		"Registration Form": registration_form,
