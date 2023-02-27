@@ -92,16 +92,6 @@ def student_info():
         gender = st.radio('Select gender', ['M', 'F'])
         age_band = st.selectbox('Select age band', ageband)
         highest_education = st.selectbox('Select highest education level', education)
-        region = st.selectbox('Select region', region_)
-        disability = st.radio('Select disability status', ['Y', 'N'])
-        num_of_prev_attempts = st.selectbox('Select number of previous attempts', numofattempts)
-        code_presentation = st.selectbox('Select semester', semester)
-        course = st.selectbox('Select code module', code_module)
-        sum_click = st.text_input("Enter sum of clicks")
-        After_Clicks = st.text_input("Enter sum of clicks")
-        Before_Clicks = st.text_input("Enter sum of clicks")
-        final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
-        studied_credits = st.text_input("Enter studied credits")
         submitbutton = st.form_submit_button("Submit")
         
         if submitbutton:
