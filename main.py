@@ -78,6 +78,25 @@ def vle():
 def student_info():
     st.title("Student Info Form")
     st.subheader("Enter details below")
+    
+     year_list = ['2013','2014']
+    semester = ['2013B', '2013J', '2014B', '2014J']
+    ageband = ['0-35','35-55','55<=']
+    numofattempts = ['1','2','3','4','5','6']
+    education = ['HE Qualification','Lower Than A Level','A Level or Equivalent','Post Graduate Qualification','No Formal quals']
+    code_module = ['AAA','BBB','CCC','DDD','EEE','FFF','GGG']
+    region_ = ['East Aglian Region','East Midlands Region','Ireland','London Region','North Region','North Western Region','Scotland','South East Region','South Region','South West Region','Wales','West Midlands Region','Yorkshire Region']
+
+    with st.form("StudentInfoForm", clear_on_submit=True):
+        studentID = st.text_input("Enter student ID")
+        submitbutton = st.form_submit_button("Submit")
+        
+        if submitbutton:
+            st.write("Student ID:", studentID)
+
+
+
+
 
    
 # Create the menu items and their respective pages
