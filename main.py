@@ -97,9 +97,7 @@ def student_info():
         num_of_prev_attempts = st.selectbox('Select number of previous attempts', numofattempts)
         code_presentation = st.selectbox('Select semester', semester)
         course = st.selectbox('Select code module', code_module)
-        sum_click = st.text_input("Enter sum of clicks")
-        After_Clicks = st.text_input("Enter sum of clicks")
-        Before_Clicks = st.text_input("Enter sum of clicks")
+    
         submitbutton = st.form_submit_button("Submit")
         
         if submitbutton:
