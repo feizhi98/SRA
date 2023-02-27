@@ -85,9 +85,9 @@ def student_info():
 menu_items = {
     "Home": lambda: st.write("Welcome to the Student Registration Form!"),
     "Registration Form": registration_form,
-    "Assessment": assessment,
-    "Vle": vle,
-    "Student Info": student_info
+    "Assessment Form": assessment,
+    "VLE Form": vle,
+    "Student Info Form": student_info
 }
 
 # Create the sidebar menu
