@@ -33,7 +33,7 @@ def assessment():
 
     year_list = ['2013','2014']
     semester = ['2013B', '2013J', '2014B', '2014J']
-	code_module = ['AAA','BBB','CCC','DDD','EEE','FFF','GGG']
+    code_module = ['AAA','BBB','CCC','DDD','EEE','FFF','GGG']
 
     with st.form("StudRegAndCourseForm", clear_on_submit=True):
         studentID = st.text_input("Enter student ID")
