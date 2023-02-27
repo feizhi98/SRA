@@ -38,10 +38,10 @@ def assessment():
     with st.form("StudRegAndCourseForm", clear_on_submit=True):
         studentID = st.text_input("Enter student ID")
         code_presentation = st.selectbox('Select semester', semester)
-	course = st.selectbox('Select code module', code_module)
+        course = st.selectbox('Select code module', code_module)
         year = st.selectbox('Select year', year_list)
         late_submit = st.radio('Select late submission status', ['0', '1'])
-	result = st.radio('Select result', ['Pass', 'Fail'])
+        result = st.radio('Select result', ['Pass', 'Fail'])
         button = st.form_submit_button("Submit")
 
         if button:
