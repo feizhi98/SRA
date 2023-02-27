@@ -103,6 +103,23 @@ def student_info():
         final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
         studied_credits = st.text_input("Enter studied credits")
         submitbutton = st.form_submit_button("Submit")
+        
+        if submitbutton:
+            st.write("Student ID:", studentID)
+            st.write("Gender:", gender)
+            st.write("Age Band:", age_band)
+            st.write("Highest Education Level:", highest_education)
+            st.write("Region:", region)
+            st.write("Disability Status:", disability)
+            st.write("Number of Previous Attempts:", num_of_prev_attempts)
+            st.write("Code Presentation:", code_presentation)
+            st.write("Code Module:", course)
+            st.write("Sum of Clicks:", sum_click)
+            st.write("After Clicks:", After_Clicks)
+            st.write("Before Clicks:", Before_Clicks)
+            st.write("Final Result:", final_result)
+            st.write("Studied Credits:", studied_credits)
+
 
 
 # Create the menu items and their respective pages
