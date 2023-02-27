@@ -75,18 +75,17 @@ def vle():
                 st.write(activity_type)
             st.write(sum_click)
             
-# Define the function to display the studentInfo page
 def student_info():
     st.title("Student Info Form")
     st.subheader("Enter details below")
-
-    year_list = ['2013', '2014']
+  
+    year_list = ['2013','2014']
     semester = ['2013B', '2013J', '2014B', '2014J']
-    ageband = ['0-35', '35-55', '55<=']
-    numofattempts = ['1', '2', '3', '4', '5', '6']
-    education = ['HE Qualification', 'Lower Than A Level', 'A Level or Equivalent', 'Post Graduate Qualification', 'No Formal quals']
-    code_module = ['AAA', 'BBB', 'CCC', 'DDD', 'EEE', 'FFF', 'GGG']
-    region_ = ['East Anglian Region', 'East Midlands Region', 'Ireland', 'London Region', 'North Region', 'North Western Region', 'Scotland', 'South East Region', 'South Region', 'South West Region', 'Wales', 'West Midlands Region', 'Yorkshire Region']
+    ageband = ['0-35','35-55','55<=']
+    numofattempts = ['1','2','3','4','5','6']
+    education = ['HE Qualification','Lower Than A Level','A Level or Equivalent','Post Graduate Qualification','No Formal quals']
+    code_module = ['AAA','BBB','CCC','DDD','EEE','FFF','GGG']
+    region_ = ['East Aglian Region','East Midlands Region','Ireland','London Region','North Region','North Western Region','Scotland','South East Region','South Region','South West Region','Wales','West Midlands Region','Yorkshire Region']
 
     with st.form("StudentInfoForm", clear_on_submit=True):
         studentID = st.text_input("Enter student ID")
@@ -96,16 +95,16 @@ def student_info():
         region = st.selectbox('Select region', region_)
         disability = st.radio('Select disability status', ['Y', 'N'])
         num_of_prev_attempts = st.selectbox('Select number of previous attempts', numofattempts)
+        studied_credits = st.text_input("Enter studied credits")
         code_presentation = st.selectbox('Select semester', semester)
         course = st.selectbox('Select code module', code_module)
-        studied_credits = st.text_input("Enter studied credits")
         sum_click = st.text_input("Enter sum of clicks")
-        After_Clicks = st.text_input("Enter sum of clicks")
-        Before_Clicks = st.text_input("Enter sum of clicks")
+        After_Clicks = st.text_input("Enter sum of after clicks")
+        Before_Clicks = st.text_input("Enter sum of before clicks")
         final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
-        button = st.form_submit_button("Submit")
-
-        if button:
+        submitbutton = st.form_submit_button("Submit")
+        
+        if submitbutton:
             st.write(studentID)
             if gender:
                 st.write(gender)
@@ -123,12 +122,16 @@ def student_info():
                 st.write(code_presentation)
             if course:
                 st.write(course)
-            st.write(sum_click)
-            st.write(After_Clicks)
-            st.write(Before_Clicks)
+            if sum_click:
+                st.write(sum_click)
+            if After_Clicks:
+                st.write(After_Clicks)
+            if Before_Clicks:
+                st.write(Before_Clicks)
             if final_result:
                 st.write(final_result)
-            st.write(studied_credits)
+            if studied_credits:
+                st.write(studied_credits)
 
 
 # Create the menu items and their respective pages
