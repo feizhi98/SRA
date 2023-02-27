@@ -103,8 +103,6 @@ def student_info():
         After_Clicks = st.text_input("Enter sum of clicks")
         Before_Clicks = st.text_input("Enter sum of clicks")
         final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
-        
-     
         button = st.form_submit_button("Submit")
 
         if button:
