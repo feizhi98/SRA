@@ -33,11 +33,12 @@ def assessment():
 
     year_list = ['2013','2014']
     semester = ['2013B', '2013J', '2014B', '2014J']
+	code_module = ['AAA','BBB','CCC','DDD','EEE','FFF','GGG']
 
     with st.form("StudRegAndCourseForm", clear_on_submit=True):
         studentID = st.text_input("Enter student ID")
         code_presentation = st.selectbox('Select semester', semester)
-		course = st.selectbox('Select code_module', code_module)
+		course = st.selectbox('Select code module', code_module)
         year = st.selectbox('Select year', year_list)
         late_submit = st.radio('Select late submission status', ['0', '1'])
 		result = st.radio('Select result', ['Pass', 'Fail'])
