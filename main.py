@@ -8,7 +8,7 @@ st.set_page_config(page_title="Student Registration Form", page_icon=":mortar_bo
 page_bg = """
 <style>
 body {
-background-image: url("https://i.imgur.com/7pUWq6Y.jpg");
+background-image: url("https://images.unsplash.com/photo-1556767571-5ec41e3239bb");
 background-size: cover;
 }
 </style>
@@ -64,7 +64,7 @@ button:hover {
 st.markdown(page_style, unsafe_allow_html=True)
 
 # Page content
-image = Image.open("https://i.imgur.com/EJzU6Of.png")
+image = Image.open("https://images.unsplash.com/photo-1518977676601-b53f82aba655")
 st.image(image, use_column_width=True)
 
 st.title("Student Registration Form")
