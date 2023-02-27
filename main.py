@@ -26,10 +26,30 @@ def registration_form():
                 st.write(year)
             st.write(code_presentation)
 
-# Define the function to display the Assessment page
+# Define the function to display the Assessment form
 def assessment():
-    st.title("Assessment Page")
-    st.write("This is the Assessment page")
+    st.title("Assessment Form")
+    st.subheader("Enter details below")
+
+    year_list = ['2013','2014']
+    semester = ['2013B', '2013J', '2014B', '2014J']
+
+    with st.form("StudRegAndCourseForm", clear_on_submit=True):
+        studentID = st.text_input("Enter student ID")
+        code_presentation = st.selectbox('Select semester', semester)
+		course = st.selectbox('Select code_module', code_module)
+        year = st.selectbox('Select year', year_list)
+        late_submit = st.radio('Select late submission status', ['0', '1'])
+		result = st.radio('Select result', ['Pass', 'Fail'])
+        button = st.form_submit_button("Submit")
+
+        if button:
+            st.write(studentID)
+            if withdrawnstatus:
+                st.write(withdrawnstatus)
+            if year:
+                st.write(year)
+            st.write(code_presentation)
 
 # Define the function to display the Vle page
 def vle():
