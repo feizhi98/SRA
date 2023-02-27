@@ -1,45 +1,36 @@
 import streamlit as st
-from PIL import Image
-import requests
-from io import BytesIO
 
-# Setting the page title and favicon
-st.set_page_config(page_title='Student Registration Form', page_icon="📚")
-
-# Setting the page background
-page_bg = """
+# Set page layout and background color
+st.set_page_config(page_title="Student Registration Form", page_icon=":pencil2:", layout="wide", initial_sidebar_state="expanded")
+page_bg = '''
 <style>
 body {
-background-image: url("https://cdn.pixabay.com/photo/2016/06/29/08/45/books-1481985_960_720.jpg");
+background-image: url("https://images.unsplash.com/photo-1519681393784-d120267933ba");
 background-size: cover;
 }
 </style>
-"""
+'''
 st.markdown(page_bg, unsafe_allow_html=True)
 
-
-# Adding a header and subheader
-st.write("""
-# Student Registration Form
-""")
-st.write("""
-## Enter details below
-""")
-
-# Creating form fields
-year_list = ['2013','2014']
-semester = ['2013B', '2013J', '2014B', '2014J']
-
+# Create form
 with st.form("StudRegAndCourseForm", clear_on_submit=True):
-    studentID = st.text_input("Enter student ID")
-    code_presentation = st.selectbox('Select semester', semester)
-    year = st.selectbox('Select year', year_list)
-    withdrawnstatus = st.radio('Select a withdrawn status', ['0', '1'])
-    button = st.form_submit_button("Submit")
+    # Set form columns
+    col1, col2 = st.beta_columns(2)
 
-    # Displaying form submission data
+    with col1:
+        st.subheader("Student Details")
+        studentID = st.text_input("Enter student ID")
+        withdrawnstatus = st.radio('Select a withdrawn status', ['0', '1'])
+        button = st.form_submit_button("Submit")
+
+    with col2:
+        st.subheader("Semester Details")
+        year_list = ['2013','2014']
+        year = st.selectbox('Select year', year_list)
+        semester = ['2013B', '2013J', '2014B', '2014J']
+        code_presentation = st.selectbox('Select semester', semester)
+
     if button:
-        st.write("### Form Submission Data")
         st.write(f"Student ID: {studentID}")
         st.write(f"Withdrawn Status: {withdrawnstatus}")
         st.write(f"Year: {year}")
