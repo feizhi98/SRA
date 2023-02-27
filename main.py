@@ -104,7 +104,6 @@ def student_info():
         Before_Clicks = st.text_input("Enter sum of clicks")
         final_result = st.radio('Select result', ['Distinction', 'Pass', 'Fail', 'Withdrawn'])
         studied_credits = st.text_input("Enter studied credits")
-
         button = st.form_submit_button("Submit")
 
 
