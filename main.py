@@ -132,14 +132,19 @@ def student_info():
                 st.write(final_result)
             if studied_credits:
 
-def main_menu():
-    st.sidebar.title("Navigation")
-    menu_items = {
-        "Student Registration Form": registration_form,
-        "Assessment Form": assessment,
-        "VLE Form": vle,
-        "Student Information Form": student_info
-    }
-    choice = st.sidebar.selectbox("Select an option", list(menu_items.keys()))
-    menu_items[choice]()
+# Create the menu items and their respective pages
+menu_items = {
+    "Home": lambda: st.write("Welcome to the Student Registration Form!"),
+    "Registration Form": registration_form,
+    "Assessment Form": assessment,
+    "VLE Form": vle,
+    "Student Info Form": student_info
+}
+
+# Create the sidebar menu
+menu_choice = st.sidebar.selectbox("Select a page", list(menu_items.keys()))
+
+# Display the selected page
+menu_items[menu_choice]()
+
 
